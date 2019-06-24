@@ -1,12 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useContext} from 'react';
+import {Provider, Context} from './context';
+import Grid from './Grid';
 import './App.css';
 
 function App() {
+  const {state: {running}, dispatch} = useContext(Context);
+  const setRunning = () => dispatch({type: 'start'});
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Grid />
+        <button type="button" onClick={() => setRunning(!running)} >Run test</button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -23,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default () => (<Provider><App/></Provider>)

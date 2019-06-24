@@ -19,6 +19,10 @@
   color: white;
 }
 
+.complete .App-logo img {
+  animation: none;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -30,4 +34,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+
+  background: #445;
+  border-radius: 5px;
+  padding: 1vw;
+
+  width: 66vw;
+}
+
+.cell {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  width:20vw;
+  height: 20vw;
+  background: #556;
+  border-radius: 5px;
+  margin: 1vw;
+
+  font-size: calc(10px + 1vmin);
+}
+
+.cell > div > span {
+  word-break: break-all;
+  padding-left: 1em;
+}
+
+.cell img {
+  width: 50%;
+  height: 50%;
+
+  visibility: hidden;
+}
+
+.cell img.running {
+  visibility: visible;
+}
+
+.cell > div {
+  width: 80%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
