@@ -36,6 +36,17 @@
   }
 }
 
+.config > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.config > div label {
+  width: 5em;
+}
+
 .grid {
   display: flex;
   flex-flow: row wrap;
@@ -74,8 +85,13 @@
   visibility: hidden;
 }
 
+.cell.hasResult img,
 .cell img.running {
   visibility: visible;
+}
+
+.cell.hasResult img {
+  animation: none;
 }
 
 .cell > div {

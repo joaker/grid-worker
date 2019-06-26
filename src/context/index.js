@@ -5,18 +5,28 @@ export const initialState = {
   results: {
 
   },
+  count: 9,
+  step: 5,
+  start: 5
 };
 
 export const actionMap = {
   'start': (state) => ({...state, running: true, results: {}}),
   'stop': (state) => ({...state, running: false}),
-  'setResult': (state, { payload: {value, result} }) => ({
-    ...state,
-    results: {
+  'setResult': (state, { payload: {value, result} }) => {
+    const results = {
       ...state.results,
       [value]: result,
-    }
-  })
+    };
+    const hasAllValues = Object.values(results).filter(x=>x).length === state.count;
+    return ({
+    ...state,
+    results,
+    running: !hasAllValues,
+  })},
+  setCount: (state, { payload: count }) => ({...state, count}),
+  setStep: (state, { payload: step }) => ({...state, step}),
+  setStart: (state, { payload: start }) => ({...state, start}),
 };
 
 const defaultHandler = state => state;

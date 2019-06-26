@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {Context} from '../context';
 import Cell from './Cell';
 
-export const Grid = ({count = 9, step = 5, start = 5}) => {
+
+export const Grid = () => {
+  const {state } = useContext(Context);
+  const { count, step, start } = state;
   const seeds = [];
   for(let i = 0; i < count; i++) {
     const val = i * step + start;
