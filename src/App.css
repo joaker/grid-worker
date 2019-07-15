@@ -8,15 +8,43 @@
   pointer-events: none;
 }
 
-.App-header {
+.content {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 88vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 20em;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .content {
+    min-height: 60vh;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #282c34;
+  height: 12vh;
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 1/1) {
+  .footer {
+    height: 40vh;
+  }
 }
 
 .complete .App-logo img {
@@ -36,15 +64,38 @@
   }
 }
 
+.config {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .config {
+    flex-flow: column wrap;
+  }
+}
+
 .config > div {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .config {
+    flex-flow: column wrap;
+  }
 }
 
 .config > div label {
-  width: 5em;
+  width: 4em;
+}
+
+.config > div button {
+  margin: 0.25em 0.5em;
+  padding: 0.25em 0.6em;
 }
 
 .grid {
@@ -64,7 +115,7 @@
   align-items: center;
   justify-content: center;
 
-  width:20vw;
+  width: 20vw;
   height: 20vw;
   background: #556;
   border-radius: 5px;
