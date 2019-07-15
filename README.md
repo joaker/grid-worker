@@ -1,8 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Grid Worker
 
-## Available Scripts
+An example of multi-threaded frontend development with web workers
 
-In the project directory, you can run:
+# How it works
+
+The application runs several long-running math operations (fibonacci number generation). These are run on WebWorker threads, which prevent the UI from being blocked.
 
 ### `npm start`
 
